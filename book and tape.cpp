@@ -1,109 +1,86 @@
 #include <iostream>
 #include <string>
-#include <exception>
 using namespace std;
-
-class publication
-{
-protected:
-    string title;
-    float price;
+class publication {
+    protected:
+        string title;
+        float price;
 };
-
-class book : public publication
-{
+class book : public publication {
     int pages;
-
-public:
-    void getb();
-    void showb();
+    public:
+        void getb();
+        void showb();
 };
-
-class tape : public publication
-{
+class tape : public publication {
     float time;
-
-public:
-    void gett();
-    void showt();
+    public:
+        void gett();
+        void showt();
 };
-
-void book::getb()
-{
-    cout << "ENTER DETAILS OF BOOK" << endl;
-    cout << "Enter The Title of The Book: " << endl;
-    cin.ignore(0, '\n');
+void book :: getb() {
+    cout << "\n------------------- Enter Details of the book -------------------\n";
+    cout << "Enter Title of the book: ";
+    cin.ignore(1, '\n');
     getline(cin, title);
-    cout << "Enter The Price of The Book: " << endl;
+    cout << "Enter the Price of the book: ";
     cin >> price;
-    cout << "Enter The number of Pages: " << endl;
+    cout << "Enter the Number of pages of the book: ";
     cin >> pages;
 
-    try
-    {
-        if (pages < 100 || pages > 5000)
-        {
-            throw pages;
+    try {
+        if(pages < 100 || pages > 5000) {
+            throw(pages);
         }
-        else
-            showb();
+        else {
+            //showb();
+        }
     }
-    catch (int i)
-    {
-        cout << "YOU ENTERED INVALID DATA" << endl;
-        title = "  ";
+    catch(int i) {
+        cout << "You entered invalid data";
+        title = " ";
         price = 0.0;
         pages = 0;
-        showb();
+        //showb();
     }
 }
-
-void book::showb()
-{
-    cout << "Title of The Book: " << title << endl;
-    cout << "Price of The Book: " << price << endl;
-    cout << "Number of Pages: " << pages << endl;
+void book :: showb() {
+    cout << "\nThe Title of the book is " << title << endl;
+    cout << "Price of the book is " << price << endl;
+    cout << "Number of pages in the book are " << pages << endl;
 }
-
-void tape::gett()
-{
-    cout << "ENTER DETAILS OF TAPE" << endl;
-    cout << "Enter Title of Tape: " << endl;
-    cin.ignore();
+void tape :: gett() {
+    cout << "\n-------------------Enter Details of the tape -------------------\n";
+    cout << "Enter Title of the tape: ";
+    cin.ignore(1, '\n');
     getline(cin, title);
-    cout << "Enter The Price of Tape: " << endl;
+    cout << "Enter the Price of the tape: ";
     cin >> price;
-    cout << "Time Required for Tape: " << endl;
+    cout << "Enter the total time of the tape: ";
     cin >> time;
 
-    try
-    {
-        if (time < 1.0 || time > 19.0)
-        {
-            throw time;
+    try {
+        if(time < 1.0 || time > 90.0) {
+            throw(time);
         }
-        else
-            showt();
+        else {
+            //showt();
+        }
     }
-    catch (float t)
-    {
-        cout << "YOU ENTERED INVALID DATA" << endl;
-        title = "  ";
+    catch(float i) {
+        cout << "You entered invalid data";
+        title = " ";
         price = 0.0;
         time = 0.0;
-        showt();
+        //showt();
     }
 }
-
-void tape::showt()
-{
-    cout << "Title of The Tape: " << title << endl;
-    cout << "Price of The Tape: " << price << endl;
-    cout << "Time Required for Tape: " << time << endl;
+void tape :: showt() {
+    cout << "\nThe Title of the tape is " << title << endl;
+    cout << "Price of the tape is " << price << endl;
+    cout << "Total time of the tape is " << time << endl;
 }
-
-int main()
-{
+int main() {
     book b;
     tape t;
     b.getb();
