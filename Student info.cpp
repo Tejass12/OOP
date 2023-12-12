@@ -1,6 +1,6 @@
 #include <iostream>
 #include <stdlib.h>
-#include<string.h>
+#include <string.h>
 using namespace std;
 
 class student
@@ -12,47 +12,48 @@ class student
 	public:
 		student();			//constructor
 		~student();			//destructor
-		student(char*, char*, char*, char*, char*, char*,char*, int, long int);
+		student(char *, char *, char *, char *, char*, char*, char *, int, long int);
 		inline void getdetails();
 		inline void showdetails();
 		static void count();
 };
 
-int student :: counter = 0;
-student :: student(char*name, char*class1, char*div, char*dob, char*bldgrp, char*address , char*dl, int roll_no, long int ph_no)
+int student :: counter = 0;  
+student :: student(char *name, char *class1, char *div, char *dob, char *bldgrp, char *address, char *dl, int roll_no, long int ph_no)
 {
-int len = strlen(name);
-this->name = new char[len+1];
-strcpy(this->name, name);
-
-len = strlen(class1);
-this->name = new char[len+1];
-strcpy(this->class1, class1);
-
-len = strlen(div);
-this->name = new char[len+1];
-strcpy(this->div, div);
-
-len = strlen(dob);
-this->name = new char[len+1];
-strcpy(this->dob, dob);
-
-len = strlen(bldgrp);
-this->name = new char[len+1];
-strcpy(this->bldgrp, bldgrp);
-
-len = strlen(address);
-this->name = new char[len+1];
-strcpy(this->address, address );
-
-len = strlen(dl);
-this->name = new char[len+1];
-strcpy(this->dl, dl);
-
-this->roll_no = roll_no;
-this->ph_no = ph_no;
+    int len = strlen(name);
+    this->name = new char[len + 1];
+    strcpy(this->name, name);
+    
+    len = strlen(class1);
+    this->class1 = new char[len + 1];
+    strcpy(this->class1, class1);
+    
+    len = strlen(div);
+    this->div = new char[len + 1];
+    strcpy(this->div, div);
+    
+    len = strlen(dob);
+    this->dob = new char[len + 1];
+    strcpy(this->dob, dob);
+    
+    len = strlen(bldgrp);
+    this->bldgrp = new char[len + 1];
+    strcpy(this->bldgrp, bldgrp);
+    
+    len = strlen(address);
+    this->address = new char[len + 1];
+    strcpy(this->address, address);
+    
+    len = strlen(dl);
+    this->dl = new char[len + 1];
+    strcpy(this->dl, dl);
+    
+    this->roll_no = roll_no;
+    
+    this->ph_no = ph_no;
 }
-student :: student()
+student :: student()  
 {
 	name = new char[1];
 	class1 = new char[1];
@@ -134,14 +135,6 @@ int main()
 	{
 		s[i].showdetails();
 	}
-
-student s1("Ani", "SE", "A", "08/11/2003", "O+", "NDB", "AU21U", 02, 464623218);
-s1.showdetails(); 
-
 	
 	return 0;
 }
-
-
-
-
