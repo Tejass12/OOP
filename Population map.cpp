@@ -50,7 +50,7 @@ do
 {
 string state;
 cout<<"\n Enter the State you want to know the Population of: ";
-cin>>state;
+getline(cin, state);
 iter = populationMap.find(state);
 if 
 (iter != populationMap.end())
